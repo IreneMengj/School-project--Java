@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class SportActivityApp {
     public static void main(String[] args) {
         /*declare variables:
-        1.index is the actual length of the array;
+        1.index is the actual number of elements in array;
         2.choice is the option from 1 to 6;
+        3.the array is to save sport objects
          */
         int index=0,choice,duration;
         String name,address;
-
         SportActivity[] sport =new SportActivity[200];
+
         // Declare and create objects
         Operation operation = new Operation();
         Scanner sc = new Scanner(System.in);
@@ -19,8 +20,7 @@ public class SportActivityApp {
         //display the "sport activity" and the menu
         while (true) {
             SportActivity sa = new SportActivity();
-            System.out.println("***********************************************");
-            System.out.println("Welcome to the sport activity management system");
+            System.out.println("Welcome to the application menu for sport activity");
             System.out.println("**************** 1. Add an item ***************");
             System.out.println("***** 2. Display the first sport activity *****");
             System.out.println("***** 3. Display the last sport activity ******");
@@ -38,7 +38,7 @@ public class SportActivityApp {
             }}
 
             switch (choice) {
-                //input
+                //Input: add an item
                 case 1:
                     if(index>=sport.length){
                         System.out.println("You are not allowed to enter more items");
@@ -84,7 +84,7 @@ public class SportActivityApp {
                     }
                     operation.showLast(sport,index);
                     break;
-                //compute and output method(average)
+                //compute and display(average)
                 case 4:
                     if (index == 0) {
                         System.out.println("You have no sports in the system. Please enter sport item first!");
@@ -93,7 +93,7 @@ public class SportActivityApp {
                     int avg = operation.avg(sport,index);
                     System.out.println("The average value of all durations is: "+avg);
                     break;
-                //process and output method(get object with smallest duration)
+                //process and output (get object with the lowest duration)
                 case 5:
                     if (index == 0) {
                         System.out.println("You have no sports in the system. Please enter sport item first!");
@@ -101,10 +101,12 @@ public class SportActivityApp {
                     }
                     operation.getMin(sport,index);
                     break;
+                //exit
                 case 6:
                     System.out.println("System exit...");
                     //System.exit(0);
                     return;
+                //in case people choose a number out of the range
                 default:
                     System.out.println("Wrong number! Please enter number from 1 to 6.");
             }
