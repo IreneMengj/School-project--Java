@@ -5,7 +5,7 @@ public class Operation {
     //declare variables
     int sum=0,avg;
 
-    //output:Display the details of the first entered item
+    //method:Display the details of the first entered item
     public void showFirst(SportActivity[] sport) {
         System.out.println("**************************************");
         System.out.print("Name\t");
@@ -16,7 +16,7 @@ public class Operation {
         System.out.println();
     }
 
-    //output:Display the details of the last entered item
+    //method:Display the details of the last entered item
     public void showLast(SportActivity[] sport, int index){
         System.out.println("**************************************");
         System.out.print("Name\t");
@@ -27,7 +27,7 @@ public class Operation {
         System.out.println();
     }
 
-    //compute and output method(average)
+    //Calculate the average value
     public Integer avg(SportActivity[] sport,int index){
         for (int i=0; i<index;i++){
             SportActivity sa = sport[i];
@@ -37,7 +37,7 @@ public class Operation {
         return avg;
     }
 
-    //compute and output method(get object with smallest duration)
+    //compute and display(get object with the lowest duration)
     public void getMin(SportActivity[] sport, int index){
         SportActivity saMin = sport[0];
         for (int i = 1; i < index; i++) {
